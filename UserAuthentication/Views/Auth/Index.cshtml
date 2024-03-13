@@ -1,0 +1,46 @@
+﻿@model AuthModel
+
+<style>
+
+    #text {
+        border: 2px solid gray;
+    }
+
+    input {
+        display: block;
+        width: 150px;
+        margin-top: 10px;
+    }
+    div{
+
+      width:100%;
+      border-radius:5px;
+    }
+    #success{
+        background-color:green;
+    }
+    #error{
+        background-color:red;
+    }
+
+</style>
+@if (!Model.IsGet)
+{
+    if (Model.IsSucces)
+    {
+        <div id="success">Giriş Başarılı</div>
+    }
+    else
+    {
+        <div id="error">Giriş Başarısız</div>
+    }
+
+
+}
+
+<form method="post" action="/Auth/Login">
+
+    <input id="text" type="text" name="username" />
+    <input id="text" type="password" name="password" />
+    <input type="submit" name="Giriş Yap" />
+</form>
